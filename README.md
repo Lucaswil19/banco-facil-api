@@ -5,14 +5,14 @@ Este arquivo e gerado automaticamente pela pipeline.
 
 ## Alunos
 
-- Aluno1
-- Aluno2
+- Lucas Wilbert
+- João Vitor Pereira
 
 ## Resultado do Docker Build
 
 | Item | Valor |
 |---|---|
 | Status | ⚪ Pulado (algum gate de seguranca falhou) |
-| Commit | `21dc3b3dce22770de1abfb33fe6dd527f212b72a` |
-| Execucao | [35548451103](https://github.com/sbaron81/unifebe-si08-devsecops/actions/runs/35548451103) |
-| Data | 21/09/2026 00:40 UTC |
+| Commit | `e87b40908d97ba76bb01cf529acdda5411598d99` |
+| Execucao | [35926393411](https://github.com/Lucaswil19/banco-facil-api/actions/runs/35926393411) |
+| Data | 23/09/2026 22:06 UTC |
