@@ -5,16 +5,30 @@ package com.unifebe.devsecops.config;
  * Nunca faca isto em um projeto real: credenciais NUNCA devem ser
  * gravadas diretamente no codigo-fonte (Secret Sprawl).
  */
-public class AppConfig {
+public final class AppConfig {
 
-    // Exemplo de credencial de banco de dados exposta no repositorio
-    public static final String DB_PASSWORD = "SuperSecretP@ssw0rd123";
+    private AppConfig() {
+        // Classe utilitaria; nao deve ser instanciada.
+    }
 
-    // Exemplo classico de chave AWS (formato oficial de exemplo da AWS)
-    public static final String AWS_ACCESS_KEY_ID = "AKIAIOSFODNN7EXAMPLE";
-    public static final String AWS_SECRET_ACCESS_KEY = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY";
+    /**
+     * Em producao, estas variaveis devem ser fornecidas por um cofre de
+     * segredos, como Vault ou AWS Secrets Manager, e nao pelo GITHUB_TOKEN.
+     */
+    public static String dbPassword() {
+        return System.getenv("DB_PASSWORD");
+    }
 
-    // Exemplo de chave de API de um provedor de pagamentos
-    public static final String PAYMENT_GATEWAY_API_KEY = "sk_live_51H8xJ2EXAMPLEKEYDONOTUSEINPRODUCTION0001";
+    public static String awsAccessKeyId() {
+        return System.getenv("AWS_ACCESS_KEY_ID");
+    }
+
+    public static String awsSecretAccessKey() {
+        return System.getenv("AWS_SECRET_ACCESS_KEY");
+    }
+
+    public static String paymentGatewayApiKey() {
+        return System.getenv("PAYMENT_GATEWAY_API_KEY");
+    }
 
 }
